@@ -17,7 +17,7 @@ async function fetchGitHubRepos() {
     // Filter out forks and sort by stars/updated date
     const filteredRepos = repos
       .filter(repo => !repo.fork) // Exclude forked repos
-      .sort((a, b) => b.stargazers_count - a.stargazers_count || new Date(b.updated_at) - new(a.updated_at));
+      .sort((a, b) => b.stargazers_count - a.stargazers_count || new Date(b.updated_at) - new Date(a.updated_at));
     
     displayProjects(filteredRepos);
   } catch (error) {
